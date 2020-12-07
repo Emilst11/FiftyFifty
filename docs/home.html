@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design-In Homepage</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background-image: url("background.jpg");
+			background-size: cover;
+			color: white;
+			font-family: Open Sans;
+		}
+		a{
+			color: black;
+		}
+		.navbar{
+			background: white;
+			font-family: Open Sans;
+			color: black;
+			height: 50px;
+		}
+		.navbar-left{
+			float: left;
+			padding-left: 20px;
+			width: 800px;
+			word-spacing: 15px;
+		}
+		.navbar-left a{
+			position: sticky;
+			display: inline;
+			color: black;
+			text-decoration: none;
+		}
+		.navbar-left a:hover{
+			color: #ACB0B8;
+		}
+		.dropdown{
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-child{
+			position: absolute;
+			display: none;
+			background-color: #fff;
+			min-width: 100px;
+		}
+		.dropdown-child a{
+			color: black;
+			padding: 20px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown:hover .dropdown-child{
+			display: block;
+		}
+		/*ISI*/
+		.icon{
+			position: absolute;
+			top: 200px;
+			left: 400px;
+		}
+		.font{
+			position: absolute;
+			font-size: 18px;
+			top: 400px;
+			left: 500px;
+			letter-spacing: 4px;
+		}
+		.btnhub{
+			padding: 7px;
+			font-family: Open Sans;
+			align-items: center;
+			text-align: middle;
+			letter-spacing: 4px;
+			font-size: 18px;
+			color: white;
+			border: white 2px solid;
+			border-radius: 50px;
+		}
+		.btnhub:hover{
+			color: black;
+			background-color: #fff;
+			text-decoration: none;
+		}
+		.btnpos{
+			position: absolute;
+			top: 500px;
+			left: 670px;
+		}
+		.jwpopup {
+    		display: none;
+   		 	position: fixed;
+    		z-index: 1;
+    		padding-top: 0px;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 100%;
+    		overflow: auto;
+    		background-color: rgb(0,0,0);
+    		background-color: rgba(0,0,0,0.7);
+		}
+		.jwpopup-content {
+    		position: relative;
+    		background-color: #fff;
+    		top: 50px;
+    		margin: auto;
+    		width: 530px;
+    		height: 650px;
+    		padding: 0;
+    		max-width: 531px;
+    		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    		-webkit-animation-name: animatetop;
+    		-webkit-animation-duration: 0.4s;
+    		animation-name: animatetop;
+    		animation-duration: 0.4s
+		}
+		.jwpopup-main{
+			position: relative;
+			top: 150px;
+			left: 50px;
+			color: black;
+			float: center;
+			font-size: 24px;
+			font-family: Open Sans;
+			letter-spacing: 0.09em;
+			font-weight: bold;
+		}
+		.jwpopup-foot{
+			position: relative;
+			top: 320px;
+			text-align: center;
+			color: black;
+			font-family: Open Sans;
+			letter-spacing: 3px;
+			font-style: normal;
+
+		}
+		@-webkit-keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+
+		@keyframes animatetop {
+    		from {top:-300px; opacity:0}
+    		to {top:50; opacity:1}
+		}
+		.close {
+  			margin-top: 7px;
+ 		 	margin: 15px;
+    		color: black;
+    		float: right;
+    		font-size: 28px;
+    		font-weight: bold;
+		}
+		.close:hover, .close:focus {
+    		color: grey;
+    		text-decoration: none;
+    		cursor: pointer;
+		}
+		.form-login{
+			position: absolute;
+			background-color: white;
+			border-color: black 1px solid;
+			border-radius: 20px;
+			letter-spacing: 10px;
+			width: 430px;
+		}
+		.form-login input#Username{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			font-family: roboto;
+			letter-spacing: 2px;
+		}
+
+		.form-login input#Password{
+			font-size: 18px;
+			background: #fff;
+			border: 2px solid #000;
+			border-radius: 20px;
+			width: 430px;
+			height: 45px;
+			padding-left: 15px;
+			letter-spacing: 5px;
+		}
+		.form-login input#submit{
+			position: absolute;
+			top: 100px;
+			left: 130px;
+			width: 150px;
+			font-family: Open Sans;
+			background-color: #fff;
+			font-weight: bold;
+			letter-spacing: 4px;
+			border-radius: 20px;
+			border: 2px solid #000;
+		}
+		input#submit:hover{
+			color: white;
+			background: #000;
+			background-color: #000;
+			cursor: pointer;
+		}
+	</style>
+
+	<div class="navbar">
+		<div class="navbar-left">
+			<a class="nav-item active" href="#" style="font-weight: bold; text-decoration: none;">HOME</a>
+			<div class="dropdown">
+				<a href="">CATEGORY</a>
+				<div class="dropdown-child">
+					<a href="">CV</a>
+					<a href="">IKLAN</a>
+					<a href="">FASHION</a>
+					<a href="">WEB</a>
+					<a href="">LOGO</a>
+					<a href="">LAINNYA</a>
+				</div>
+			</div>
+			<a class="nav-item" href="javascript:void(0);" id="jwpopupLink">LOGIN</a>
+			<a class="nav-item" href="pageabout.html">ABOUT</a>
+		</div>
+	</div>
+	
+	<div id="jwpopupBox" class="jwpopup">
+		<div class="jwpopup-content">
+			<div class="jwpopup-head">
+				<span class="close">x</span>
+				<div style="
+					position: relative; 
+					top: 100px;
+					left: 210px;
+					color: black;
+					float: center;
+					font-size: 24px;
+					font-family: Open Sans;
+					letter-spacing: 0.09em;
+					font-weight: bold;">LOGIN</div>
+				</div>
+			<div class="jwpopup-main">
+				<div>USERNAME</div>
+				<div class="form-login">
+					<input type="Username" id="Username" name="Username">
+				</div>
+				<br>
+				<br>
+				<div>PASSWORD</div>
+				<div class="form-login">
+					<input type="Password" id="Password" name="Password">
+					<br>
+					<input type="submit" id="submit" name="login" value="Sign in">
+				</div>
+			</div>
+			<div class="jwpopup-foot">
+				<div>Atau belum memiliki akun ?</div>
+				<a href="">Klik disini</a>
+			</div>
+		</div>
+	</div>
+
+	<center>
+		<div class="icon"><img src="logo1.png" alt="logo"></div>
+		<div class="font">Selamat datang di website jual beli design</div>
+		<div class="btnpos"><a class="btnhub" href="contact.html">HUBUNGI KAMI</a>
+			<span></span>
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		var jwpopup = document.getElementById('jwpopupBox');
+		var mpLink = document.getElementById("jwpopupLink");
+		var close = document.getElementsByClassName("close")[0];mpLink.onclick = function() 
+		{
+    		jwpopup.style.display = "block";
+		}
+
+		close.onclick = function() {
+			jwpopup.style.display = "none";
+		}
+		window.onclick = function(event) 
+		{
+    	if (event.target == jwpopup) 
+    		{
+        		jwpopup.style.display = "none";
+    		}
+   		}
+	</script>
+</body>
+</html>
